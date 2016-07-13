@@ -1,0 +1,96 @@
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+const int maxn=50050;
+const int maxnode=maxn*2;
+
+string str;
+int num[maxn];
+int qL,qR,p;
+
+struct IntervalTree
+{
+	int peo[maxnode];             //记录坐标 
+
+	void build(int o, int L, int R)//o表示线段树的节点，lc表示左儿子，rc表示右儿子
+	{       
+		if(L == R)
+			peo[o]=num[L];
+		else
+		{
+	    	int M = L + (R-L)/2;
+	      // 递归创建子树
+		    int lc = o*2, rc = o*2+1;
+		    build(lc, L, M);
+		    build(rc, M+1, R);
+			peo[o]=peo[lc]+peo[rc];
+    	}
+  	}
+
+	int query(int o, int L, int R)
+ 	{
+    	if(qL == L && R == qR) return peo[o];
+    	int M = L + (R-L)/2;
+    	int lc = o*2, rc = o*2+1;
+    	if(qR <= M) return query(lc, L, M);
+    	if(qL > M) return query(rc, M+1, R);
+  	}
+  	
+  	void update(int o, int L, int R,int value)
+  	{
+	  	if(L == R)
+	  	{
+	  		peo[o]+=value;
+	  		return;
+	  	}
+	  	else
+	  	{
+	  		int M = L + (R-L)/2;
+	  		if(p<=M)
+	  			update(o*2, L, M);
+  			else
+  				update(o*2+1, M+1,R);
+			peo[o]+=value;
+	  	}
+  	}
+};
+
+IntervalTree tree;
+
+int main()
+{
+	int t,n;
+	cin>>t;
+	for(int r=1;r<=t;r++)
+	{
+		cin>>n;
+		for(int i=0;i<n;i++)
+			cin>>num[i];
+		tree.build(0,0,n-1);
+		cout<<"Case "<<r<<":"<<endl;
+		while(cin>>str)
+		{
+			int value;
+			if(str.compare("End")==0)
+				break;
+			if(str.compare("Add")==0)
+			{
+				cin>>p>>value;
+				tree.update(0,0,n-1,value);
+			}
+			else if(str.compare("Sub")==0)
+			{
+				cin>>p>>value;
+				tree.update(0,0,n-1,-value);
+			}
+			else if(str.compare("Query")==0)
+			{
+				cin>>qL>>qR;
+				cout<<tree.query(0,0,n-1)<<endl; 
+			}
+		}
+	}
+	return 0;
+} 
