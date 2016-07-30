@@ -52,10 +52,11 @@ typedef vector<int> vi;
 #define lowbit(x) (x&(-x))
 
 #define MID(x,y) (x+((y-x)>>1))
-#define ls (idx<<1)
-#define rs (idx<<1|1)
-#define lson ls,l,mid
-#define rson rs,mid+1,r
+#define getidx(l,r) (l+r | l!=r)
+#define ls getidx(l,mid)
+#define rs getidx(mid+1,r)
+#define lson l,mid
+#define rson mid+1,r
 
 template<class T>
 inline bool read(T &n)
@@ -88,29 +89,70 @@ inline void write(T n)
 }
 //-----------------------------------
 
-const int MAXN=100010;
+const int MAXN=100005;
+vector<int> g[MAXN];
+int k[MAXN],dp[MAXN][2],vis[MAXN];
 
-double dp[MAXN];
-int nxt[MAXN];
-
+void dfs(int u,int fa)
+{
+    if(vis[u])
+    {
+        if(dp[u][0]!=dp[fa][1])
+        {
+            dp[u][0]=-1;
+            if(!k[u])
+            {
+                dp[u][1]=-1;
+                for(auto v:g[u])
+                    dfs(v,u);
+            }
+        }
+    }
+    else
+    {
+        vis[u]=1;
+        dp[u][0]=dp[fa][1];
+        dp[u][1]=k[u] ? k[u] : dp[u][0];
+        for(auto v:g[u])
+            dfs(v,u);
+    }
+}
 int main()
 {
-    int n,m,u,v;
-    while(read(n)&&read(m),n||m)
+    int n,m;
+    scanf("%d",&n);
+
+    for(int i=1; i<=n; i++)
     {
-        CLR(dp,0);
-        CLR(nxt,-1);
-        for(int i=0; i<m; i++)
-            read(u),read(v),nxt[u]=v;
-        for(int i=n-1; i>=0; i--)
-            for(int j=1; j<=6; j++)
-            {
-                int k=i+j;
-                while(~nxt[k])
-                    k=nxt[k];
-                dp[i]+=(dp[k]+1)/6;
-            }
-        printf("%.4f\n",dp[0]);
+        read(k[i]),read(m);
+        for(int j=0,x; j < m; j++)
+        {
+            read(x);
+            g[i].pb(x);
+        }
+    }
+
+    vis[1]=1;
+    dp[1][0]=0;
+    dp[1][1]=k[1];
+    for(auto u:g[1])
+        dfs(u,1);
+
+    for(int i=1; i<=n; i++)
+    {
+        if(dp[i][0]==-1) printf("unknown");
+        else if(dp[i][0]==0) printf("sober");
+        else
+            printf("%d",dp[i][0]);
+
+        printf(" ");
+
+        if(dp[i][1]==-1) printf("unknown");
+        else if(dp[i][1]==0) printf("sober");
+        else
+            printf("%d",dp[i][1]);
+
+        printf("\n");
     }
     return 0;
 }

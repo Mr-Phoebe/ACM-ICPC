@@ -52,10 +52,11 @@ typedef vector<int> vi;
 #define lowbit(x) (x&(-x))
 
 #define MID(x,y) (x+((y-x)>>1))
-#define ls (idx<<1)
-#define rs (idx<<1|1)
-#define lson ls,l,mid
-#define rson rs,mid+1,r
+#define getidx(l,r) (l+r | l!=r)
+#define ls getidx(l,mid)
+#define rs getidx(mid+1,r)
+#define lson l,mid
+#define rson mid+1,r
 
 template<class T>
 inline bool read(T &n)
@@ -87,71 +88,37 @@ inline void write(T n)
     while(len--) putchar(data[len]+48);
 }
 //-----------------------------------
+const int MOD = 1e9+7;
 
-const int MAXN=400010;
-int s[MAXN][10],num[MAXN], a[10];
-ll ans;
-map<int,int> ma;
-
-int cal(int x,int p)
-{
-    if(__gcd(x,p)>1)    return 0;
-    return x;
-}
-
-void init()
-{
-    for(int i=2; i<MAXN; i++)
-        if(num[i]==0)
-            for(int j=i; j<MAXN; j+=i)
-                s[j][++num[j]]=i;
-}
+int n, a, b;
+ll f[2][305][2];
 
 int main()
 {
-
-    int T,n,q;
-    init();
-    read(T);
-    while(T--)
+    scanf("%d %d %d", &n, &a, &b);
+    memset(f, 0, sizeof(f));
+    int p0 = 0, p1 = 1;
+    f[0][1][0] = f[0][1][1] = 1;
+    for (int i = 2; i <= n; i++)
     {
-        read(n),read(q);
-        ma.clear();
-        while(q--)
+        memset(f[p1], 0, sizeof(f[p1]));
+        for (int j = 1; j <= max(a, b); j++)
         {
-            ll x, y;
-            int op,p;
-            read(op),read(x),read(y);
-            if(op==1)
+            if (f[p0][j][0] != 0)
             {
-                read(p);
-                ans = (x+y)*(y-x+1)/2;
-                for (int i = 1; i <= num[p]; i++)
-                {
-                    memset(a, 0, sizeof(a));
-                    for (int j = num[p]; j >= num[p]-i+1; j--) a[j] = 1;
-                    ll cnt = 0;
-                    int tmp;
-                    do
-                    {
-                        tmp = 1;
-                        for (int k = 1; k <= num[p]; k++)
-                        if (a[k] == 1) tmp = tmp*s[p][k];
-                        cnt = y/tmp-(x-1)/tmp;
-                        ll fir = tmp + ((x-1)/tmp)*tmp, las = tmp + (y/tmp-1)*tmp;
-                        ll sum = (fir+las)*cnt/2;
-                        if (i&1) ans -= sum;
-                        else ans += sum;
-                    } while (next_permutation(a+1, a+num[p]+1));
-                }
-                map<int,int>::iterator it,be=ma.lower_bound(x),en=ma.upper_bound(y);
-                for(it=be; it!=en; it++)
-                    ans+=cal(it->second,p)-cal(it->first,p);
-                printf("%lld\n",ans);
+                f[p1][1][1] = (f[p1][1][1]+f[p0][j][0])%MOD;
+                if (j < a) f[p1][j+1][0] = (f[p1][j+1][0]+f[p0][j][0])%MOD;
             }
-            else
-                ma[x]=y;
+            if (f[p0][j][1] != 0)
+            {
+                f[p1][1][0] = (f[p1][1][0]+f[p0][j][1])%MOD;
+                if (j < b) f[p1][j+1][1] = (f[p1][j+1][1]+f[p0][j][1])%MOD;
+            }
         }
+        p0 ^= 1; p1 ^= 1;
     }
+    ll ans = 0;
+    for (int i = 1; i <= max(a, b); i++) ans = (ans+f[p0][i][0]+f[p0][i][1])%MOD;
+    printf("%lld\n", ans);
     return 0;
 }

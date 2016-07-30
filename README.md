@@ -1,6 +1,9 @@
 # ACM-ICPC
-[博客个人主页](http://blog.csdn.net/u013007900)
+<br><strong><font size="6">[我的个人博客主页](http://blog.csdn.net/u013007900)</font></strong></br>
 
+> [winoros的GitHub/ACM链接](https://github.com/winoros/Acm)  
+> [winoros的个人博客链接](http://winoros.logdown.com/)  
+> [ylasce的个人博客链接](blog.ylasce.com)  
 
 ## ACM-ICPC 算法分类 11/20/07
 ### 初期: 
