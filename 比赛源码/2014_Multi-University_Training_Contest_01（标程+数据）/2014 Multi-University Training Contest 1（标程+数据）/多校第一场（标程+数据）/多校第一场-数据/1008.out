@@ -1,0 +1,90 @@
+Case #1:
+<news>
+  <title>
+this is a test</title>
+  <content width="1000px">
+    this is content<br/>
+    <pre>var x = 1111;</pre>
+  </content>
+</news>
+Case #2:
+Can't Identify
+Case #3:
+<html>
+<body>
+    xxx<br/>
+    <title id="title">YYY</title>
+  </body>
+<title>YYY</title>
+</html>
+Case #4:
+<xxx>
+     <body>body say hello!<br/>
+        <p>ddddddddddddd  </p> <br/>
+     </body><body><body></body></body><body></body>
+  </xxx>
+Case #5:
+<xxx>
+  <yyy>
+     <body id="body">body say hello!<br/>
+        <p>ddddddddddddd  </p> <br/>
+     </body>
+  </yyy>
+</xxx>
+Case #6:
+<xxx>
+  <yyy>
+     <body id="body">body say hello!<br/>
+        <p>ddddddddddddd  </p> <br/>
+     </body><body><body></body></body><body></body>
+  </yyy>
+</xxx>
+Case #7:
+Can't Identify
+Case #8:
+<xxx>
+  <yyy class="xxx dddd">body say hello!<br id="x"/>
+        <p style="kk kdkd" back="xkls">ddddddddddddd  </p> <br/>
+     </yyy>
+</xxx>
+Case #9:
+<xxx>
+  <yyy class="xxxd ddd">body say hello!<br id="x"/>
+        <p style="kkkd kd" back="xkls">ddddddddddddd  </p> <br/>
+     </yyy>
+  <zzz class="xxxd ddd">body say hello!<br id="x"/>
+        <p style="kkkd kd" back="xkls">ddddddddddddd  </p> <br/>
+     </zzz>
+</xxx>
+Case #10:
+<xxx>
+  <yyy class="xxxd ddd">body say hello!<br id="x"/>
+        <p style="kkkd kd" back="xkls">ddddddddddddd  </p> <br/>
+     </yyy>
+  <yyy class="xxxd ddd">body say hello!<br id="x"/>
+        <p style="kkkd kd" back="xkls">ddddddddddddd  </p> <br/>
+     </yyy>
+</xxx>
+Case #11:
+<xxx>
+  <yyy class="xxxd ddd">body say hello!<br id="x"/>
+        <p style="kkkd kd" back="xkls">ddddddddddddd  </p> <br/>
+     </yyy>
+  <yyy class="xxxd ddd">body say hello!<br id="x"/>
+        <p style="kkkd kd" back="xkls">ddddddddddddd  </p> <br/>
+     </yyy>
+  <x>
+    <yyy class="xxxd ddd">body say hello!<br id="x"/>
+        <p style="kkkd kd" back="xkls">ddddddddddddd  </p> <br/>
+     </yyy>
+    <zzz class="xxxd ddd">body say hello!<br id="x"/>
+        <p style="kkkd kd" back="xkls">ddddddddddddd  </p> <br/>
+     </zzz>
+    <zzz class="xxxd ddd">body say hello!<br id="x"/>
+        <p style="kkkd kd" back="xkls">ddddddddddddd  </p> <br/>
+     </zzz>
+  </x>
+  <zzz class="xxxd ddd">body say hello!<br id="x"/>
+        <p style="kkkd kd" back="xkls">ddddddddddddd  </p> <br/>
+     </zzz>
+</xxx>

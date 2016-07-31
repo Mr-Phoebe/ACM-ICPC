@@ -1,0 +1,225 @@
+11
+<news>
+  <title>default title</title>
+  <content width="1000px"></content>
+</news>
+1
+<html><h3 id="header"></h3>
+<div id="content"></div></html>
+2
+header-title
+content-content
+<html><h3 id="header" class="style1">
+this is a test</h3>
+ <div id="content" class="style2">
+    this is content<br/>
+    <pre>var x = 1111;</pre>
+  </div>
+</html>
+<xxx>
+  <title>default title</title>
+</xxx>
+1
+<html><h3 id="header"></h3></html>
+1
+header-title
+<html><h3 id="tmp">xxxx</h3></html>
+<html>
+<body></body>
+<title></title>
+</html>
+1
+<html>
+  <body id="body">
+    <title id="title"></title>
+  </body>
+</html>
+2
+title-title
+body-body
+<html>
+  <body id="body">
+    xxx<br/>
+    <title id="title">YYY</title>
+  </body>
+</html>
+<xxx>
+</xxx>
+2
+<html>
+  <body class="body"></body>
+</html>
+0
+<html>
+  <body class="body" id="body"></body>
+</html>
+1
+body-xxx
+<html>
+  <body class="body" id="body">
+     <body>body say hello!<br/>
+        <p>ddddddddddddd  </p> <br/>
+     </body><body><body></body></body><body></body>
+  </body>
+</html>
+<xxx>
+  <yyy>
+  </yyy>
+</xxx>
+2
+<html>
+  <body id="b"></body>
+</html>
+1
+b-yyy
+<html>
+  <body id="b">
+     <body id="body"></body>
+  </body>
+</html>
+1
+body-xxx
+<html>
+  <body id="b">
+     <body id="body">body say hello!<br/>
+        <p>ddddddddddddd  </p> <br/>
+     </body>
+  </body>
+</html>
+<xxx>
+  <yyy>
+  </yyy>
+</xxx>
+2
+<html>
+  <body id="b"></body>
+</html>
+1
+b-yyy
+<html>
+  <body id="b">
+     <body id="body"></body>
+  </body>
+</html>
+1
+body-xxx
+<html>
+  <body id="b">
+     <body id="body">body say hello!<br/>
+        <p>ddddddddddddd  </p> <br/>
+     </body><body><body></body></body><body></body>
+  </body>
+</html>
+<xxx>
+  <yyy>
+  </yyy>
+</xxx>
+1
+<html>
+  <body id="b">
+     <body id="body"></body>
+  </body>
+</html>
+1
+body-xxx
+<html>
+  <body id="b">
+     <body id="body">body say hello!<br/>
+        <p>ddddddddddddd  </p> <br/>
+     </body><body><body></body></body><body></body>
+  </body>
+</html>
+<xxx>
+  <yyy class="xxx dddd">
+  </yyy>
+</xxx>
+1
+<html>
+  <body id="b">
+     <body id="body"></body>
+  </body>
+</html>
+1
+body-yyy
+<html>
+  <body id="b" style="kk kdkd" back="xkls">
+     <body id="body">body say hello!<br id="x"/>
+        <p style="kk kdkd" back="xkls">ddddddddddddd  </p> <br/>
+     </body>
+  </body>
+</html>
+<xxx>
+  <yyy class="xxxd ddd">
+  </yyy>
+  <zzz class="xxxd ddd">
+  </zzz>
+</xxx>
+1
+<html>
+  <body id="b">
+     <body id="body"></body>
+  </body>
+</html>
+2
+body-yyy
+body-zzz
+<html>
+  <body id="b" style="kkkd kd" back="xkls">
+     <body id="body">body say hello!<br id="x"/>
+        <p style="kkkd kd" back="xkls">ddddddddddddd  </p> <br/>
+     </body>
+  </body>
+</html>
+<xxx>
+  <yyy class="xxxd ddd">
+  </yyy>
+  <yyy class="xxxd ddd">
+  </yyy>
+</xxx>
+1
+<html>
+  <body id="b">
+     <body id="body"></body>
+  </body>
+</html>
+1
+body-yyy
+<html>
+  <body id="b" style="kkkd kd" back="xkls">
+     <body id="body">body say hello!<br id="x"/>
+        <p style="kkkd kd" back="xkls">ddddddddddddd  </p> <br/>
+     </body>
+  </body>
+</html>
+<xxx>
+  <yyy class="xxxd ddd">
+  </yyy>
+  <yyy class="xxxd ddd">
+  </yyy>
+  <x>
+    <yyy class="xxxd ddd">
+    </yyy>
+    <zzz class="xxxd ddd">
+    </zzz>
+    <zzz class="xxxd ddd">
+    </zzz>
+  </x>
+  <zzz class="xxxd ddd">
+  </zzz>
+</xxx>
+1
+<html>
+  <body id="b">
+     <body id="body"></body>
+  </body>
+</html>
+2
+body-yyy
+body-zzz
+<html>
+  <body id="b" style="kkkd kd" back="xkls">
+     <body id="body">body say hello!<br id="x"/>
+        <p style="kkkd kd" back="xkls">ddddddddddddd  </p> <br/>
+     </body>
+  </body>
+</html>

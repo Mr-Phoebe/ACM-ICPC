@@ -1,0 +1,10 @@
+9
+div>p>span
+div.aa#bb.cc.ee>p#g>span.d
+div.aa#bb.cc.ee>(p#g1>span.d1)(p#g2>span.d2)(p#g3>span.d3)
+ul#id1>li.classA*3>p*2
+dIv.aa#bb.cc.ee>(p#g1>span.d1)(p#g1>span.d1)(p#g1>span.d221)
+div.aa#bb.cc.ee>p#g*2>span.d>(div.aa#bb.cc.ee>(p#g1>span.d1)(p#g2>span.d2)(p#g3>span.d3))(ul#id1>li.classA*3>p*2)
+tile.e#f.g.h
+tile.e#f.g.h*3>dd>(ee)(gg)
+a>tile.e#f.g.h*3>dd>(ee)(gg>tile.e#f.g.h*3>dd>(ee)(gg))
