@@ -1,3 +1,14 @@
 信息
 *.exe
 *.o
+Debug
+*.dsp
+*.dsw
+*.ncb
+*.opt
+*.plg
+*.ilk
+*.obj
+*.pch
+*.pdb
+*.idb
