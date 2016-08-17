@@ -1,0 +1,1 @@
+print(' that '.join(map(lambda x:['I hate','I love'][x%2],range(int(input()))))+' it')
