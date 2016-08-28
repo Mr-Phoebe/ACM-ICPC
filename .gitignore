@@ -12,3 +12,4 @@ Debug
 *.pch
 *.pdb
 *.idb
+.DS_Store
