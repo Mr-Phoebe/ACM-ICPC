@@ -13,8 +13,8 @@ class Solution(object):
                 wordsMap[word] = 1
             else:
                 wordsMap[word] += 1
-        word_len = len(words[0])
         word_size = len(words)
+        word_len = len(words[0])
         ans = []
         for i in range(len(s) - word_len * word_size + 1):
             j = 0
