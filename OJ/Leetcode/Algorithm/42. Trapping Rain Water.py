@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Author: HaonanWu
-# @Date:   2017-07-23 23:15:51
-# @Last Modified by:   HaonanWu
-# @Last Modified time: 2017-07-23 23:16:03
-
 class Solution(object):
     def trap(self, height):
         """
@@ -23,6 +17,10 @@ class Solution(object):
         for i in range(le-1, -1, -1):
             rightmax[i] = maxn
             maxn = max(maxn,height[i])
+        
+        print height
+        print rightmax
+        print leftmax
             
         ans = 0
         for i in range(le):

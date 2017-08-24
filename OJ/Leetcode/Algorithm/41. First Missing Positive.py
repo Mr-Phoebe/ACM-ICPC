@@ -1,11 +1,9 @@
-# -*- coding: utf-8 -*-
-# @Author: HaonanWu
-# @Date:   2017-07-21 12:43:56
-# @Last Modified by:   HaonanWu
-# @Last Modified time: 2017-07-21 13:04:56
-
-# python的for循环 range(l)，最后得到的是l-1
-
+/*
+* @Author: Haonan Wu
+* @Date:   2017-08-25 04:26:08
+* @Last Modified by:   lenovo
+* @Last Modified time: 2017-08-25 04:26:17
+*/
 class Solution(object):
     def firstMissingPositive(self, nums):
         """
