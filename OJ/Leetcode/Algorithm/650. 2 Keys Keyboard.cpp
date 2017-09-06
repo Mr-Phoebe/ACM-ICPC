@@ -11,3 +11,4 @@ public:
         return s;
     }
 };
+// this is a greedy solution, but I don't find the proof of this method
