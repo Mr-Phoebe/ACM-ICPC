@@ -30,10 +30,10 @@ public:
         res = max(res, sum);
         return ret+1;
     }
-    
+
     int longestUnivaluePath(TreeNode* root) {
         int res = 0;
-        helper(root, res);
+        dfs(root, res);
         return res;
     }
 };
