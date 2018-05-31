@@ -1,6 +1,5 @@
 # ACM-ICPC
-<br><strong><font size="6">[我的个人博客主页](http://blog.csdn.net/u013007900)</font></strong></br>
-
+> <br><strong><font size="6">[我的个人博客主页](http://blog.csdn.net/u013007900)</font></strong></br>
 > [winoros的GitHub/ACM链接](https://github.com/winoros/Acm)  
 > [winoros的个人博客链接](http://winoros.logdown.com/)  
 
