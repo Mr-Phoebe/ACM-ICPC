@@ -7,21 +7,21 @@ public:
     }
 private:
     int ans;
-    void mergeSort(vector<int>& nums, int left, int right) 
+    void mergeSort(vector<int>& nums, int left, int right)
     {
-        if(right <= left) 
+        if(right <= left)
             return;
         int mid = left + ((right - left)>>1);
         mergeSort(nums, left, mid);
         mergeSort(nums, mid+1, right);
 
         int count = 0;
-        for(int l = left, r = mid+1; l <= mid;) 
+        for(int l = left, r = mid+1; l <= mid;)
             if(r > right || nums[l] <= 2LL*nums[r])
                 l++, ans += count;
-            else 
+            else
                 r++, count++;
-        
-        sort(nums.begin()+left, nums.begin()+right+1);   
+
+        sort(nums.begin()+left, nums.begin()+right+1);
     }
 };
