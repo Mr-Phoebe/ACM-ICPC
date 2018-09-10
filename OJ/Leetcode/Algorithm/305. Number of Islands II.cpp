@@ -1,7 +1,7 @@
 class Solution {
     vector<int> fa;
     int m, n;
-    int find_fa(int id) 
+    int find_fa(int id)
     {
         if(fa[id] != id)
             return fa[id] = find_fa(fa[id]);
@@ -24,12 +24,12 @@ public:
         this->m = m;
         this->n = n;
         int island = 0;
-        for (auto pos : positions) 
+        for (auto pos : positions)
         {
             int x = pos.first, y = pos.second, idx_p = idx(x, y);
             fa[idx_p] = idx_p;
             island++;
-            for(int i = 0; i < 4; i++) 
+            for(int i = 0; i < 4; i++)
             {
                 int xx = x + dx[i], yy = y + dy[i], idx_new = idx(xx, yy);
                 if(in(xx, yy))
